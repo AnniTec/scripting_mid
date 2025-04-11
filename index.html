@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="registration">
+        <h1>Group Form</h1>
+
+        <div class="name-fields">
+            <div>
+                <label for="firstName">First name</label>
+                <input type="text" required id="firstName" name="firstName" placeholder="First name">
+            </div>
+            <div>
+                <label for="lastName">Last name</label>
+                <input type="text" required id="lastName" name="lastName" placeholder="Last name">
+            </div>
+        </div>
+
+        <label for="email">Email</label>
+        <input type="email" required id="email" name="email" placeholder="you@company.com">
+
+        <label for="password">Password</label>
+        <input type="password" required id="password" name="password" minlength="8" placeholder="Password">
+        <div class="validation-message">Password must be at least 8 characters long</div>
+
+        <label for="teamSize">Team size</label>
+        <input type="number" required id="teamSize" name="teamSize" min="1" max="3" step="1">
+
+        <h4>Technologies</h4>
+        <div class="checkbox-group">
+            <div>
+                <input type="checkbox" id="html" name="technologies" value="HTML">
+                <label for="html">HTML</label>
+            </div>
+            <div>
+                <input type="checkbox" id="css" name="technologies" value="CSS">
+                <label for="css">CSS</label>
+            </div>
+            <div>
+                <input type="checkbox" id="js" name="technologies" value="JavaScript">
+                <label for="js">JavaScript</label>
+            </div>
+            <div>
+                <input type="checkbox" id="react" name="technologies" value="ReactJS">
+                <label for="react">ReactJS</label>
+            </div>
+            <div>
+                <input type="checkbox" id="figma" name="technologies" value="Figma">
+                <label for="figma">Figma</label>
+            </div>
+            <div>
+                <input type="checkbox" id="github" name="technologies" value="Github">
+                <label for="github">Github</label>
+            </div>
+        </div>
+        <div class="validation-message">Choose at least 3 services</div>
+
+        <button type="submit">Submit</button>
+    </div>
+</body>
+</html>
