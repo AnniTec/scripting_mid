@@ -1,78 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group Form</title>
-    <link rel="stylesheet" href="form.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Group Form</title>
+  <link rel="stylesheet" href="form.css"/>
 </head>
 <body>
-    <div class="registration">
-        <h1>Group Form</h1>
-        <form action="#" method="POST">
-            <div class="name-fields">
-                <div>
-                    <label for="firstName">First name</label>
-                    <input type="text" required id="firstName" name="firstName" placeholder="First name">
-                </div>
-                <div>
-                    <label for="lastName">Last name</label>
-                    <input type="text" required id="lastName" name="lastName" placeholder="Last name">
-                </div>
-            </div>
+  <div class="registration">
+    <h1>Group Form</h1>
+    <form id="registrationForm" action="#" method="POST">
+      
+      <div class="name-fields">
+        <div>
+          <label for="firstName">First name</label>
+          <input type="text" required id="firstName" name="firstName" placeholder="First name" />
+        </div>
+        <div>
+          <label for="lastName">Last name</label>
+          <input type="text" required id="lastName" name="lastName" placeholder="Last name" />
+        </div>
+      </div>
 
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" required id="email" name="email" placeholder="you@company.com">
-            </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" required id="email" name="email" placeholder="you@company.com" />
+      </div>
 
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" required id="password" name="password" minlength="8" placeholder="Password">
-                <div class="validation-message">Password must be at least 8 characters long</div>
-            </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" required id="password" name="password" minlength="8" placeholder="Password" />
+        <div class="validation-message">Password must be at least 8 characters long</div>
+      </div>
 
-            <div class="form-group">
-                <label for="teamSize" class="teamize-text">Team size</label>
-                <input type="number" required id="teamSize" name="teamSize" min="1" max="3" step="1" class="team-size">
-            </div>
+      <div class="form-group">
+        <label for="teamSize" class="teamize-text">Team size</label>
+        <input type="number" required id="teamSize" name="teamSize" min="1" max="3" step="1" class="team-size">
+      </div>
 
-            <h4 class="technologies" class="h4">Technologies</h4>
-            <div class="checkbox-group">
-                <div>
-                    <input type="checkbox" id="html" name="technologies" value="HTML" required>
-                    <label for="html">Html</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="react" name="technologies" value="ReactJS">
-                    <label for="react">ReactJS</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="css" name="technologies" value="CSS">
-                    <label for="css">Css</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="figma" name="technologies" value="Figma">
-                    <label for="figma">Figma</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="js" name="technologies" value="JavaScript">
-                    <label for="js">Javascript</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="github" name="technologies" value="Github">
-                    <label for="github">Github</label>
-                </div>
-            </div>
-            <div id="checkbox-error" class="validation-message"></div>
+      <div class="form-group">
+        <label for="technologies">Technologies</label>
+      </div>
 
-            <div class="teamvalid" >
-                <img src="sticker.png" alt="sticker" class="teamvalid-img">
-                Choose at least 3 services
-            </div>
+      <div class="checkbox-group">
+        <div>
+          <input type="checkbox" id="html" name="technologies" value="HTML" onclick="toggleImage(this)" />
+          <label for="html">Html</label>
+          <img src="wichka.png" alt="Html" id="html-img" class="checkbox-img" style="display: none;" />
+        </div>
+        <div>
+          <input type="checkbox" id="react" name="technologies" value="ReactJS" onclick="toggleImage(this)" />
+          <label for="react">ReactJS</label>
+          <img src="wichka.png" alt="ReactJS" id="react-img" class="checkbox-img" style="display: none;" />
+        </div>
+        <div>
+          <input type="checkbox" id="css" name="technologies" value="CSS" onclick="toggleImage(this)" />
+          <label for="css">Css</label>
+          <img src="wichka.png" alt="CSS" id="css-img" class="checkbox-img" style="display: none;" />
+        </div>
+        <div>
+          <input type="checkbox" id="figma" name="technologies" value="Figma" onclick="toggleImage(this)" />
+          <label for="figma">Figma</label>
+          <img src="wichka.png" alt="Figma" id="figma-img" class="checkbox-img" style="display: none;" />
+        </div>
+        <div>
+          <input type="checkbox" id="js" name="technologies" value="JavaScript" onclick="toggleImage(this)" />
+          <label for="js">Javascript</label>
+          <img src="wichka.png" alt="JavaScript" id="js-img" class="checkbox-img" style="display: none;" />
+        </div>
+        <div>
+          <input type="checkbox" id="github" name="technologies" value="Github" onclick="toggleImage(this)" />
+          <label for="github">Github</label>
+          <img src="wichka.png" alt="Github" id="github-img" class="checkbox-img" style="display: none;" />
+        </div>
+      </div>
 
-            <button type="submit" class="button" name="submit">Submit</button>
-        </form>
-    </div>
+      <div class="validation-message" id="checkbox-error"></div>
+
+      <div class="teamvalid">
+        <img src="sticker.png" alt="sticker" class="teamvalid-img" />
+        Choose at least 3 services
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 </body>
 </html>
+
+<script src="form.js"></script>
